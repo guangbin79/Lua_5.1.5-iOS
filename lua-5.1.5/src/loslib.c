@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <spawn.h>
 
 #define loslib_c
 #define LUA_LIB
@@ -36,7 +37,14 @@ static int os_pushresult (lua_State *L, int i, const char *filename) {
 
 
 static int os_execute (lua_State *L) {
-  lua_pushinteger(L, system(luaL_optstring(L, 1, NULL)));
+  const char * command = luaL_optstring(L, 1, NULL);
+  pid_t pid;
+  int wait_val;
+
+  posix_spawn(&pid, command, NULL, NULL, NULL, NULL);
+  waitpid(pid, &wait_val, 0);
+  lua_pushinteger(L, wait_val);
+
   return 1;
 }
 

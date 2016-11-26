@@ -28,6 +28,7 @@
 #define LUA_ANSI
 #endif
 
+#define LUA_USE_IOS
 
 #if !defined(LUA_ANSI) && defined(_WIN32)
 #define LUA_WIN
@@ -44,6 +45,9 @@
 #define LUA_DL_DYLD		/* does not need extra library */
 #endif
 
+#if defined(LUA_USE_IOS)
+#define LUA_USE_POSIX
+#endif
 
 
 /*
