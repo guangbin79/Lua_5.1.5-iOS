@@ -14,8 +14,10 @@
 #include "lauxlib.h"
 
 #include "luazip.h"
+#include "lfs.h"
 
 #define LUA_ZIPLIBNAME	"zip"
+#define LFS_LIBNAME         "lfs"
 
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},
@@ -27,6 +29,7 @@ static const luaL_Reg lualibs[] = {
   {LUA_MATHLIBNAME, luaopen_math},
   {LUA_DBLIBNAME, luaopen_debug},
   {LUA_ZIPLIBNAME, luaopen_zip},
+  {LFS_LIBNAME, luaopen_lfs},
   {NULL, NULL}
 };
 

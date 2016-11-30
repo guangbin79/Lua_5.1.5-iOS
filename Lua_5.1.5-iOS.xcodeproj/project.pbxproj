@@ -56,6 +56,7 @@
 		0A185E6C1E613B5300109032 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E691E613B5300109032 /* lauxlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185E6D1E613B5300109032 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6A1E613B5300109032 /* lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185E6E1E613B5300109032 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6B1E613B5300109032 /* lualib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A185E2C1E61366C00109032 /* lfs.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E2B1E61366C00109032 /* lfs.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		0A185E691E613B5300109032 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "lua-5.1.5/src/lauxlib.h"; sourceTree = "<group>"; };
 		0A185E6A1E613B5300109032 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "lua-5.1.5/src/lua.h"; sourceTree = "<group>"; };
 		0A185E6B1E613B5300109032 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "lua-5.1.5/src/lualib.h"; sourceTree = "<group>"; };
+		0A185E2B1E61366C00109032 /* lfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lfs.c; path = "luafilesystem-v_1_6_3/src/lfs.c"; sourceTree = "<group>"; };
 		0AEB21231E6080F4009A9BCF /* lua51.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lua51.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB21271E6080F4009A9BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,9 +210,18 @@
 			name = memorymapping;
 			sourceTree = "<group>";
 		};
+		0A185E2A1E61365A00109032 /* luafilesystem-v_1_6_3 */ = {
+			isa = PBXGroup;
+			children = (
+				0A185E2B1E61366C00109032 /* lfs.c */,
+			);
+			name = "luafilesystem-v_1_6_3";
+			sourceTree = "<group>";
+		};
 		0AEB21191E6080F4009A9BCF = {
 			isa = PBXGroup;
 			children = (
+				0A185E2A1E61365A00109032 /* luafilesystem-v_1_6_3 */,
 				0A185E211E6132F400109032 /* memorymapping */,
 				0A185E191E61305A00109032 /* luazip-1.2.6 */,
 				0A185E001E61300D00109032 /* zziplib-0.13.62 */,
@@ -340,6 +351,7 @@
 				0A185E231E61330700109032 /* fmemopen.c in Sources */,
 				0A185DFC1E612E5F00109032 /* lundump.c in Sources */,
 				0A185DF41E612E5F00109032 /* loslib.c in Sources */,
+				0A185E2C1E61366C00109032 /* lfs.c in Sources */,
 				0A185DE81E612E5F00109032 /* ldo.c in Sources */,
 				0A185DF31E612E5F00109032 /* lopcodes.c in Sources */,
 				0A185E111E61305300109032 /* fseeko.c in Sources */,
@@ -478,6 +490,7 @@
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
 					memorymapping/src/,
+					"luafilesystem-v_1_6_3/src/",
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -502,6 +515,7 @@
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
 					memorymapping/src/,
+					"luafilesystem-v_1_6_3/src/",
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
