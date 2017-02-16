@@ -24,6 +24,8 @@
 
 #include "lauxlib.h"
 
+#include "zzip/zzip.h"
+#include "fmemopen.h"
 
 #define FREELIST_REF	0	/* free list of references */
 
@@ -551,6 +553,7 @@ static int errfile (lua_State *L, const char *what, int fnameindex) {
 
 LUALIB_API int luaL_loadfile (lua_State *L, const char *filename) {
   LoadF lf;
+  char * buf = NULL;
   int status, readstatus;
   int c;
   int fnameindex = lua_gettop(L) + 1;  /* index of filename on the stack */
@@ -561,7 +564,33 @@ LUALIB_API int luaL_loadfile (lua_State *L, const char *filename) {
   }
   else {
     lua_pushfstring(L, "@%s", filename);
-    lf.f = fopen(filename, "r");
+    char * pzipfs = strchr(filename, '$');
+    if (pzipfs == NULL) {
+      lf.f = fopen(filename, "r");
+    }
+    else {
+      ZZIP_DIR * dir;
+      lf.f = NULL;
+      *pzipfs = '\0';
+      dir = zzip_dir_open(filename, 0);
+      *pzipfs = '$';
+      if (dir) {
+        ++pzipfs;
+        ZZIP_FILE * fp = zzip_file_open(dir, pzipfs, 0);
+        if (fp) {
+          ZZIP_STAT zs;
+          zzip_file_stat(fp, &zs);
+          if (zs.st_size != 0) buf = (char *)malloc(zs.st_size);
+          else buf = (char *)malloc(1);
+          if (buf) {
+            zzip_file_read(fp, buf, zs.st_size);
+            lf.f = fmemopen(buf, zs.st_size, "r");
+          }
+          zzip_file_close(fp);
+        }
+        zzip_dir_close(dir);
+      }
+    }
     if (lf.f == NULL) return errfile(L, "open", fnameindex);
   }
   c = getc(lf.f);
@@ -581,6 +610,7 @@ LUALIB_API int luaL_loadfile (lua_State *L, const char *filename) {
   status = lua_load(L, getF, &lf, lua_tostring(L, -1));
   readstatus = ferror(lf.f);
   if (filename) fclose(lf.f);  /* close file (even in case of errors) */
+  if (buf) free(buf);
   if (readstatus) {
     lua_settop(L, fnameindex);  /* ignore results from `lua_load' */
     return errfile(L, "read", fnameindex);

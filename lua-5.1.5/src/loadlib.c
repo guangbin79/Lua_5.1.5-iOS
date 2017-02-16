@@ -21,6 +21,7 @@
 #include "lauxlib.h"
 #include "lualib.h"
 
+#include "zzip/zzip.h"
 
 /* prefix for open functions in C libraries */
 #define LUA_POF		"luaopen_"
@@ -330,10 +331,30 @@ static int ll_loadlib (lua_State *L) {
 
 
 static int readable (const char *filename) {
-  FILE *f = fopen(filename, "r");  /* try to open file */
-  if (f == NULL) return 0;  /* open failed */
-  fclose(f);
-  return 1;
+  char * pzipfs = strchr(filename, '$');
+  if (pzipfs == NULL) {
+    FILE *f = fopen(filename, "r");  /* try to open file */
+    if (f == NULL) return 0;  /* open failed */
+    fclose(f);
+    return 1;
+  }
+  else {
+    ZZIP_DIR * dir;
+    *pzipfs = '\0';
+    dir = zzip_dir_open(filename, 0);
+    *pzipfs = '$';
+    if (dir) {
+      ++pzipfs;
+      ZZIP_FILE * fp = zzip_file_open(dir, pzipfs, 0);
+      if (fp) {
+        zzip_file_close(fp);
+        zzip_dir_close(dir);
+        return 1;
+      }
+      zzip_dir_close(dir);
+    }
+    return 0;
+  }
 }
 
 

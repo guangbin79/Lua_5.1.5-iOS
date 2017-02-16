@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A1740B21E67CAF000DC26E7 /* luaconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1740B11E67CAF000DC26E7 /* luaconf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185DE21E612E5F00109032 /* lapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DC41E612E5F00109032 /* lapi.c */; };
 		0A185DE31E612E5F00109032 /* lauxlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DC51E612E5F00109032 /* lauxlib.c */; };
 		0A185DE41E612E5F00109032 /* lbaselib.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DC61E612E5F00109032 /* lbaselib.c */; };
@@ -37,9 +38,6 @@
 		0A185DFD1E612E5F00109032 /* lvm.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DDF1E612E5F00109032 /* lvm.c */; };
 		0A185DFE1E612E5F00109032 /* lzio.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DE01E612E5F00109032 /* lzio.c */; };
 		0A185DFF1E612E5F00109032 /* print.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185DE11E612E5F00109032 /* print.c */; };
-		0A185E6C1E613B5300109032 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E691E613B5300109032 /* lauxlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A185E6D1E613B5300109032 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6A1E613B5300109032 /* lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A185E6E1E613B5300109032 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6B1E613B5300109032 /* lualib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185E0D1E61305300109032 /* dir.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E011E61305300109032 /* dir.c */; };
 		0A185E0E1E61305300109032 /* err.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E021E61305300109032 /* err.c */; };
 		0A185E0F1E61305300109032 /* fetch.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E031E61305300109032 /* fetch.c */; };
@@ -54,9 +52,14 @@
 		0A185E181E61305300109032 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E0C1E61305300109032 /* zip.c */; };
 		0A185E1B1E61307200109032 /* luazip.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E1A1E61307200109032 /* luazip.c */; };
 		0A185E201E61318200109032 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A185E1F1E61318200109032 /* libz.tbd */; };
+		0A185E231E61330700109032 /* fmemopen.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E221E61330700109032 /* fmemopen.c */; };
+		0A185E6C1E613B5300109032 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E691E613B5300109032 /* lauxlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A185E6D1E613B5300109032 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6A1E613B5300109032 /* lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A185E6E1E613B5300109032 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6B1E613B5300109032 /* lualib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A1740B11E67CAF000DC26E7 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = luaconf.h; path = "lua-5.1.5/src/luaconf.h"; sourceTree = "<group>"; };
 		0A185DC41E612E5F00109032 /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lapi.c; path = "lua-5.1.5/src/lapi.c"; sourceTree = "<group>"; };
 		0A185DC51E612E5F00109032 /* lauxlib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lauxlib.c; path = "lua-5.1.5/src/lauxlib.c"; sourceTree = "<group>"; };
 		0A185DC61E612E5F00109032 /* lbaselib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lbaselib.c; path = "lua-5.1.5/src/lbaselib.c"; sourceTree = "<group>"; };
@@ -87,9 +90,6 @@
 		0A185DDF1E612E5F00109032 /* lvm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lvm.c; path = "lua-5.1.5/src/lvm.c"; sourceTree = "<group>"; };
 		0A185DE01E612E5F00109032 /* lzio.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lzio.c; path = "lua-5.1.5/src/lzio.c"; sourceTree = "<group>"; };
 		0A185DE11E612E5F00109032 /* print.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = print.c; path = "lua-5.1.5/src/print.c"; sourceTree = "<group>"; };
-		0A185E691E613B5300109032 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "lua-5.1.5/src/lauxlib.h"; sourceTree = "<group>"; };
-		0A185E6A1E613B5300109032 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "lua-5.1.5/src/lua.h"; sourceTree = "<group>"; };
-		0A185E6B1E613B5300109032 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "lua-5.1.5/src/lualib.h"; sourceTree = "<group>"; };
 		0A185E011E61305300109032 /* dir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = dir.c; path = "zziplib-0.13.62/zzip/dir.c"; sourceTree = "<group>"; };
 		0A185E021E61305300109032 /* err.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = err.c; path = "zziplib-0.13.62/zzip/err.c"; sourceTree = "<group>"; };
 		0A185E031E61305300109032 /* fetch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fetch.c; path = "zziplib-0.13.62/zzip/fetch.c"; sourceTree = "<group>"; };
@@ -104,6 +104,10 @@
 		0A185E0C1E61305300109032 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = zip.c; path = "zziplib-0.13.62/zzip/zip.c"; sourceTree = "<group>"; };
 		0A185E1A1E61307200109032 /* luazip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = luazip.c; path = "luazip-1.2.6/src/luazip.c"; sourceTree = "<group>"; };
 		0A185E1F1E61318200109032 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		0A185E221E61330700109032 /* fmemopen.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fmemopen.c; path = memorymapping/src/fmemopen.c; sourceTree = "<group>"; };
+		0A185E691E613B5300109032 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "lua-5.1.5/src/lauxlib.h"; sourceTree = "<group>"; };
+		0A185E6A1E613B5300109032 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "lua-5.1.5/src/lua.h"; sourceTree = "<group>"; };
+		0A185E6B1E613B5300109032 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "lua-5.1.5/src/lualib.h"; sourceTree = "<group>"; };
 		0AEB21231E6080F4009A9BCF /* lua51.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lua51.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB21271E6080F4009A9BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +127,7 @@
 		0A185DC31E610DDA00109032 /* lua-5.1.5 */ = {
 			isa = PBXGroup;
 			children = (
+				0A1740B11E67CAF000DC26E7 /* luaconf.h */,
 				0A185E691E613B5300109032 /* lauxlib.h */,
 				0A185E6A1E613B5300109032 /* lua.h */,
 				0A185E6B1E613B5300109032 /* lualib.h */,
@@ -195,9 +200,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		0A185E211E6132F400109032 /* memorymapping */ = {
+			isa = PBXGroup;
+			children = (
+				0A185E221E61330700109032 /* fmemopen.c */,
+			);
+			name = memorymapping;
+			sourceTree = "<group>";
+		};
 		0AEB21191E6080F4009A9BCF = {
 			isa = PBXGroup;
 			children = (
+				0A185E211E6132F400109032 /* memorymapping */,
 				0A185E191E61305A00109032 /* luazip-1.2.6 */,
 				0A185E001E61300D00109032 /* zziplib-0.13.62 */,
 				0A185DC31E610DDA00109032 /* lua-5.1.5 */,
@@ -233,6 +247,7 @@
 				0A185E6D1E613B5300109032 /* lua.h in Headers */,
 				0A185E6C1E613B5300109032 /* lauxlib.h in Headers */,
 				0A185E6E1E613B5300109032 /* lualib.h in Headers */,
+				0A1740B21E67CAF000DC26E7 /* luaconf.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +337,7 @@
 				0A185DE31E612E5F00109032 /* lauxlib.c in Sources */,
 				0A185DE91E612E5F00109032 /* ldump.c in Sources */,
 				0A185E171E61305300109032 /* write.c in Sources */,
+				0A185E231E61330700109032 /* fmemopen.c in Sources */,
 				0A185DFC1E612E5F00109032 /* lundump.c in Sources */,
 				0A185DF41E612E5F00109032 /* loslib.c in Sources */,
 				0A185DE81E612E5F00109032 /* ldo.c in Sources */,
@@ -461,6 +477,7 @@
 					"zziplib-0.13.62/",
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
+					memorymapping/src/,
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -484,6 +501,7 @@
 					"zziplib-0.13.62/",
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
+					memorymapping/src/,
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
