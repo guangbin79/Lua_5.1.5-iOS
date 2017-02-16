@@ -511,9 +511,7 @@ static void createmeta (lua_State *L) {
 LUAZIP_API int luaopen_zip (lua_State *L) {
   createmeta(L);
   lua_newtable(L);
-  set_funcs(L, ziplib);
+  luaL_register(L, LUA_ZIPLIBNAME, ziplib);
   set_info(L);
-  lua_pushvalue(L, -1);
-  lua_setglobal(L, LUA_ZIPLIBNAME);
   return 1;
 }
