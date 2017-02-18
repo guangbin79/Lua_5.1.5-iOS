@@ -57,6 +57,19 @@
 		0A185E6D1E613B5300109032 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6A1E613B5300109032 /* lua.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185E6E1E613B5300109032 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A185E6B1E613B5300109032 /* lualib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A185E2C1E61366C00109032 /* lfs.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E2B1E61366C00109032 /* lfs.c */; };
+		0A185E561E6137E900109032 /* auxiliar.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E491E6137E900109032 /* auxiliar.c */; };
+		0A185E571E6137E900109032 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4A1E6137E900109032 /* buffer.c */; };
+		0A185E581E6137E900109032 /* except.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4B1E6137E900109032 /* except.c */; };
+		0A185E591E6137E900109032 /* inet.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4C1E6137E900109032 /* inet.c */; };
+		0A185E5A1E6137E900109032 /* io.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4D1E6137E900109032 /* io.c */; };
+		0A185E5B1E6137E900109032 /* luasocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4E1E6137E900109032 /* luasocket.c */; };
+		0A185E5C1E6137E900109032 /* mime.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E4F1E6137E900109032 /* mime.c */; };
+		0A185E5D1E6137E900109032 /* options.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E501E6137E900109032 /* options.c */; };
+		0A185E5E1E6137E900109032 /* select.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E511E6137E900109032 /* select.c */; };
+		0A185E5F1E6137E900109032 /* tcp.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E521E6137E900109032 /* tcp.c */; };
+		0A185E601E6137E900109032 /* timeout.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E531E6137E900109032 /* timeout.c */; };
+		0A185E611E6137E900109032 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E541E6137E900109032 /* udp.c */; };
+		0A185E621E6137E900109032 /* usocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E551E6137E900109032 /* usocket.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +123,19 @@
 		0A185E6A1E613B5300109032 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "lua-5.1.5/src/lua.h"; sourceTree = "<group>"; };
 		0A185E6B1E613B5300109032 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "lua-5.1.5/src/lualib.h"; sourceTree = "<group>"; };
 		0A185E2B1E61366C00109032 /* lfs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = lfs.c; path = "luafilesystem-v_1_6_3/src/lfs.c"; sourceTree = "<group>"; };
+		0A185E491E6137E900109032 /* auxiliar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = auxiliar.c; path = "luasocket-3.0-rc1/src/auxiliar.c"; sourceTree = "<group>"; };
+		0A185E4A1E6137E900109032 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = "luasocket-3.0-rc1/src/buffer.c"; sourceTree = "<group>"; };
+		0A185E4B1E6137E900109032 /* except.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = except.c; path = "luasocket-3.0-rc1/src/except.c"; sourceTree = "<group>"; };
+		0A185E4C1E6137E900109032 /* inet.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = inet.c; path = "luasocket-3.0-rc1/src/inet.c"; sourceTree = "<group>"; };
+		0A185E4D1E6137E900109032 /* io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = io.c; path = "luasocket-3.0-rc1/src/io.c"; sourceTree = "<group>"; };
+		0A185E4E1E6137E900109032 /* luasocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = luasocket.c; path = "luasocket-3.0-rc1/src/luasocket.c"; sourceTree = "<group>"; };
+		0A185E4F1E6137E900109032 /* mime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = mime.c; path = "luasocket-3.0-rc1/src/mime.c"; sourceTree = "<group>"; };
+		0A185E501E6137E900109032 /* options.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = options.c; path = "luasocket-3.0-rc1/src/options.c"; sourceTree = "<group>"; };
+		0A185E511E6137E900109032 /* select.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = select.c; path = "luasocket-3.0-rc1/src/select.c"; sourceTree = "<group>"; };
+		0A185E521E6137E900109032 /* tcp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = tcp.c; path = "luasocket-3.0-rc1/src/tcp.c"; sourceTree = "<group>"; };
+		0A185E531E6137E900109032 /* timeout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timeout.c; path = "luasocket-3.0-rc1/src/timeout.c"; sourceTree = "<group>"; };
+		0A185E541E6137E900109032 /* udp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = udp.c; path = "luasocket-3.0-rc1/src/udp.c"; sourceTree = "<group>"; };
+		0A185E551E6137E900109032 /* usocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usocket.c; path = "luasocket-3.0-rc1/src/usocket.c"; sourceTree = "<group>"; };
 		0AEB21231E6080F4009A9BCF /* lua51.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lua51.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB21271E6080F4009A9BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,9 +244,30 @@
 			name = "luafilesystem-v_1_6_3";
 			sourceTree = "<group>";
 		};
+		0A185E481E61379900109032 /* luasocket-3.0-rc1 */ = {
+			isa = PBXGroup;
+			children = (
+				0A185E491E6137E900109032 /* auxiliar.c */,
+				0A185E4A1E6137E900109032 /* buffer.c */,
+				0A185E4B1E6137E900109032 /* except.c */,
+				0A185E4C1E6137E900109032 /* inet.c */,
+				0A185E4D1E6137E900109032 /* io.c */,
+				0A185E4E1E6137E900109032 /* luasocket.c */,
+				0A185E4F1E6137E900109032 /* mime.c */,
+				0A185E501E6137E900109032 /* options.c */,
+				0A185E511E6137E900109032 /* select.c */,
+				0A185E521E6137E900109032 /* tcp.c */,
+				0A185E531E6137E900109032 /* timeout.c */,
+				0A185E541E6137E900109032 /* udp.c */,
+				0A185E551E6137E900109032 /* usocket.c */,
+			);
+			name = "luasocket-3.0-rc1";
+			sourceTree = "<group>";
+		};
 		0AEB21191E6080F4009A9BCF = {
 			isa = PBXGroup;
 			children = (
+				0A185E481E61379900109032 /* luasocket-3.0-rc1 */,
 				0A185E2A1E61365A00109032 /* luafilesystem-v_1_6_3 */,
 				0A185E211E6132F400109032 /* memorymapping */,
 				0A185E191E61305A00109032 /* luazip-1.2.6 */,
@@ -336,6 +383,7 @@
 				0A185E151E61305300109032 /* plugin.c in Sources */,
 				0A185DED1E612E5F00109032 /* liolib.c in Sources */,
 				0A185DF71E612E5F00109032 /* lstring.c in Sources */,
+				0A185E581E6137E900109032 /* except.c in Sources */,
 				0A185DFD1E612E5F00109032 /* lvm.c in Sources */,
 				0A185DEA1E612E5F00109032 /* lfunc.c in Sources */,
 				0A185DF81E612E5F00109032 /* lstrlib.c in Sources */,
@@ -348,11 +396,17 @@
 				0A185DE31E612E5F00109032 /* lauxlib.c in Sources */,
 				0A185DE91E612E5F00109032 /* ldump.c in Sources */,
 				0A185E171E61305300109032 /* write.c in Sources */,
+				0A185E5B1E6137E900109032 /* luasocket.c in Sources */,
 				0A185E231E61330700109032 /* fmemopen.c in Sources */,
+				0A185E571E6137E900109032 /* buffer.c in Sources */,
+				0A185E5E1E6137E900109032 /* select.c in Sources */,
 				0A185DFC1E612E5F00109032 /* lundump.c in Sources */,
 				0A185DF41E612E5F00109032 /* loslib.c in Sources */,
 				0A185E2C1E61366C00109032 /* lfs.c in Sources */,
 				0A185DE81E612E5F00109032 /* ldo.c in Sources */,
+				0A185E611E6137E900109032 /* udp.c in Sources */,
+				0A185E621E6137E900109032 /* usocket.c in Sources */,
+				0A185E5C1E6137E900109032 /* mime.c in Sources */,
 				0A185DF31E612E5F00109032 /* lopcodes.c in Sources */,
 				0A185E111E61305300109032 /* fseeko.c in Sources */,
 				0A185DFE1E612E5F00109032 /* lzio.c in Sources */,
@@ -360,8 +414,12 @@
 				0A185DE41E612E5F00109032 /* lbaselib.c in Sources */,
 				0A185E121E61305300109032 /* info.c in Sources */,
 				0A185DEC1E612E5F00109032 /* linit.c in Sources */,
+				0A185E5D1E6137E900109032 /* options.c in Sources */,
 				0A185E0D1E61305300109032 /* dir.c in Sources */,
+				0A185E5F1E6137E900109032 /* tcp.c in Sources */,
 				0A185DF61E612E5F00109032 /* lstate.c in Sources */,
+				0A185E5A1E6137E900109032 /* io.c in Sources */,
+				0A185E601E6137E900109032 /* timeout.c in Sources */,
 				0A185E1B1E61307200109032 /* luazip.c in Sources */,
 				0A185DF01E612E5F00109032 /* lmem.c in Sources */,
 				0A185DE51E612E5F00109032 /* lcode.c in Sources */,
@@ -369,8 +427,10 @@
 				0A185E0F1E61305300109032 /* fetch.c in Sources */,
 				0A185E131E61305300109032 /* memdisk.c in Sources */,
 				0A185DEF1E612E5F00109032 /* lmathlib.c in Sources */,
+				0A185E561E6137E900109032 /* auxiliar.c in Sources */,
 				0A185E161E61305300109032 /* stat.c in Sources */,
 				0A185DF91E612E5F00109032 /* ltable.c in Sources */,
+				0A185E591E6137E900109032 /* inet.c in Sources */,
 				0A185DE61E612E5F00109032 /* ldblib.c in Sources */,
 				0A185E181E61305300109032 /* zip.c in Sources */,
 				0A185DF51E612E5F00109032 /* lparser.c in Sources */,
@@ -485,12 +545,17 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					LUASOCKET_DEBUG,
+				);
 				HEADER_SEARCH_PATHS = (
 					"zziplib-0.13.62/",
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
 					memorymapping/src/,
 					"luafilesystem-v_1_6_3/src/",
+					"luasocket-3.0-rc1/src/",
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -510,12 +575,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = LUASOCKET_DEBUG;
 				HEADER_SEARCH_PATHS = (
 					"zziplib-0.13.62/",
 					"lua-5.1.5/src/",
 					"luazip-1.2.6/src/",
 					memorymapping/src/,
 					"luafilesystem-v_1_6_3/src/",
+					"luasocket-3.0-rc1/src/",
 				);
 				INFOPLIST_FILE = "Lua_5.1.5-iOS/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

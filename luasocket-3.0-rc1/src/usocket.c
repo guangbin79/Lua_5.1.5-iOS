@@ -120,7 +120,11 @@ int socket_select(t_socket n, fd_set *rfds, fd_set *wfds, fd_set *efds,
 \*-------------------------------------------------------------------------*/
 int socket_create(p_socket ps, int domain, int type, int protocol) {
     *ps = socket(domain, type, protocol);
-    if (*ps != SOCKET_INVALID) return IO_DONE; 
+    if (*ps != SOCKET_INVALID) {
+        int value = 1;
+        setsockopt(*ps, SOL_SOCKET, SO_NOSIGPIPE, &value, sizeof(value));
+        return IO_DONE;
+    }
     else return errno; 
 }
 
@@ -184,7 +188,11 @@ int socket_accept(p_socket ps, p_socket pa, SA *addr, socklen_t *len, p_timeout 
     if (*ps == SOCKET_INVALID) return IO_CLOSED; 
     for ( ;; ) {
         int err;
-        if ((*pa = accept(*ps, addr, len)) != SOCKET_INVALID) return IO_DONE;
+        if ((*pa = accept(*ps, addr, len)) != SOCKET_INVALID) {
+            int value = 1;
+            setsockopt(*pa, SOL_SOCKET, SO_NOSIGPIPE, &value, sizeof(value));
+            return IO_DONE;
+        }
         err = errno;
         if (err == EINTR) continue;
         if (err != EAGAIN && err != ECONNABORTED) return err;

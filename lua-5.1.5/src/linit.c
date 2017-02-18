@@ -15,9 +15,13 @@
 
 #include "luazip.h"
 #include "lfs.h"
+#include "luasocket.h"
+#include "mime.h"
 
-#define LUA_ZIPLIBNAME	"zip"
-#define LFS_LIBNAME         "lfs"
+#define LUA_ZIPLIBNAME          "zip"
+#define LFS_LIBNAME             "lfs"
+#define LUA_SOCKETLIBNAME       "socket.core"
+#define LUA_MIMELIBNAME         "mime.core"
 
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},
@@ -30,6 +34,8 @@ static const luaL_Reg lualibs[] = {
   {LUA_DBLIBNAME, luaopen_debug},
   {LUA_ZIPLIBNAME, luaopen_zip},
   {LFS_LIBNAME, luaopen_lfs},
+  {LUA_MIMELIBNAME, luaopen_mime_core},
+  {LUA_SOCKETLIBNAME, luaopen_socket_core},
   {NULL, NULL}
 };
 
