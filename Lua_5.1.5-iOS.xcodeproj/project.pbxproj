@@ -70,6 +70,7 @@
 		0A185E601E6137E900109032 /* timeout.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E531E6137E900109032 /* timeout.c */; };
 		0A185E611E6137E900109032 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E541E6137E900109032 /* udp.c */; };
 		0A185E621E6137E900109032 /* usocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E551E6137E900109032 /* usocket.c */; };
+		0A185E681E6139C400109032 /* rings.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A185E671E6139C400109032 /* rings.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		0A185E531E6137E900109032 /* timeout.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = timeout.c; path = "luasocket-3.0-rc1/src/timeout.c"; sourceTree = "<group>"; };
 		0A185E541E6137E900109032 /* udp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = udp.c; path = "luasocket-3.0-rc1/src/udp.c"; sourceTree = "<group>"; };
 		0A185E551E6137E900109032 /* usocket.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = usocket.c; path = "luasocket-3.0-rc1/src/usocket.c"; sourceTree = "<group>"; };
+		0A185E671E6139C400109032 /* rings.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = rings.c; path = "rings-v_1_3_0/src/rings.c"; sourceTree = "<group>"; };
 		0AEB21231E6080F4009A9BCF /* lua51.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lua51.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEB21271E6080F4009A9BCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,9 +266,18 @@
 			name = "luasocket-3.0-rc1";
 			sourceTree = "<group>";
 		};
+		0A185E661E6139B100109032 /* rings-v_1_3_0 */ = {
+			isa = PBXGroup;
+			children = (
+				0A185E671E6139C400109032 /* rings.c */,
+			);
+			name = "rings-v_1_3_0";
+			sourceTree = "<group>";
+		};
 		0AEB21191E6080F4009A9BCF = {
 			isa = PBXGroup;
 			children = (
+				0A185E661E6139B100109032 /* rings-v_1_3_0 */,
 				0A185E481E61379900109032 /* luasocket-3.0-rc1 */,
 				0A185E2A1E61365A00109032 /* luafilesystem-v_1_6_3 */,
 				0A185E211E6132F400109032 /* memorymapping */,
@@ -416,6 +427,7 @@
 				0A185DEC1E612E5F00109032 /* linit.c in Sources */,
 				0A185E5D1E6137E900109032 /* options.c in Sources */,
 				0A185E0D1E61305300109032 /* dir.c in Sources */,
+				0A185E681E6139C400109032 /* rings.c in Sources */,
 				0A185E5F1E6137E900109032 /* tcp.c in Sources */,
 				0A185DF61E612E5F00109032 /* lstate.c in Sources */,
 				0A185E5A1E6137E900109032 /* io.c in Sources */,

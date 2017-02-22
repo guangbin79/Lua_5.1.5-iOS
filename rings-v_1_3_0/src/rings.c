@@ -362,9 +362,7 @@ int luaopen_rings (lua_State *L) {
         lua_pop (L, 1);
         /* define library functions */
         lua_newtable(L);
-        luaL_newlib(L, rings);
-        lua_pushvalue(L, -1);
-        lua_setglobal(L, RINGS_TABLENAME);
+        luaL_register(L, RINGS_TABLENAME, rings);
         lua_pushliteral(L, RINGS_ENV);
         lua_newtable (L);
         lua_settable (L, LUA_REGISTRYINDEX);

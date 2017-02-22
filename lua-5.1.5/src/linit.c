@@ -18,10 +18,13 @@
 #include "luasocket.h"
 #include "mime.h"
 
+int luaopen_rings (lua_State *L);
+
 #define LUA_ZIPLIBNAME          "zip"
 #define LFS_LIBNAME             "lfs"
 #define LUA_SOCKETLIBNAME       "socket.core"
 #define LUA_MIMELIBNAME         "mime.core"
+#define RINGS_TABLENAME         "rings"
 
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},
@@ -36,6 +39,7 @@ static const luaL_Reg lualibs[] = {
   {LFS_LIBNAME, luaopen_lfs},
   {LUA_MIMELIBNAME, luaopen_mime_core},
   {LUA_SOCKETLIBNAME, luaopen_socket_core},
+  {RINGS_TABLENAME,   luaopen_rings},
   {NULL, NULL}
 };
 
