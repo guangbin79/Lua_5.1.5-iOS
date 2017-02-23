@@ -7,6 +7,7 @@
 -- $Id: filehandler.lua,v 1.26 2009/08/11 01:48:07 mascarenhas Exp $
 ----------------------------------------------------------------------------
 
+require "zip"
 local lfs = require "lfs"
 local url = require "socket.url"
 local mime = require "xavante.mime"
@@ -109,12 +110,19 @@ local function filehandler (req, res, baseDir)
                 return httpd.err_403 (req, res)
         end
 
+        if string.byte(req.relpath) == string.byte('/') then
+            req.relpath = string.sub(req.relpath, 2)
+        end
+
         local path = baseDir .."/".. req.relpath
+        local path_in_zip = string.sub(path, string.find(path, '$', 1, true) + 1)
+        local path_zip = string.sub(path, 1, string.find(path, '$', 1, true) - 1)
 
         res.headers ["Content-Type"] = mimefrompath (path)
         res.headers ["Content-Encoding"] = encodingfrompath (path)
 
-        local attr = lfs.attributes (path)
+        local attr = lfs.attributes (path_zip)
+
         if not attr then
                 return httpd.err_404 (req, res)
         end
@@ -130,8 +138,25 @@ local function filehandler (req, res, baseDir)
 
         res.headers["Content-Length"] = attr.size
 
-        local f = io.open (path, "rb")
+        local zfile = nil
+        local f = nil
+
+        if path_in_zip then
+            zfile, _ = zip.open(path_zip)
+
+            if zfile then
+                f, _ = zfile:open(path_in_zip)
+                if f then
+                    res.headers["Content-Length"] = f:seek("end")
+                    f:seek("set")
+                end
+            end
+        else
+            f = io.open (path, "rb")
+        end
+
         if not f then
+                if zfile then zfile:close() end
                 return httpd.err_404 (req, res)
         end
 
@@ -147,6 +172,7 @@ local function filehandler (req, res, baseDir)
         res.chunked = false
         res:send_headers()
         f:close()
+        if zfile then zfile:close() end
                 return res
         end
 
@@ -164,6 +190,7 @@ local function filehandler (req, res, baseDir)
                 res:send_headers ()
     end
     f:close ()
+    if zfile then zfile:close() end
         return res
 end
 
